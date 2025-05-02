@@ -89,6 +89,7 @@ fn update_product(inventory: &mut Vec<Product>) {
         }
     };
 
+    let name_input = read_input("Enter the new name: ");
     let quantity_input = read_input("Enter the new quantity: ");
     let quantity: u32 = match quantity_input.parse() {
         Ok(num) => num,
@@ -98,6 +99,7 @@ fn update_product(inventory: &mut Vec<Product>) {
         }
     };
 
+    inventory[index].name = name_input.clone();
     inventory[index].quantity = quantity;
     println!("Product '{}' updated successfully!", inventory[index].name);
 }
